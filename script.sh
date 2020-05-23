@@ -9,13 +9,13 @@ do
 	year="${year_day%-*}"
 	#separate day from year_day
 	day="0${year_day##*-}"
-	#separate filename(1.jpg , 2.jpg etc.) from full file_name
-	file="photos${file_name##*-}"
+	#separate filename(1.jpg , 2.jpg etc.) from full file_name and concat "photos" infront of file name
+ 	file="photos${file_name##*-}"
 
 	#check if the directory with a specific year is present or not
 	if [ ! -d $year ]
 	then
-		# create the directory of not present
+		# create the directory if not present
 		mkdir $year/$day -p
 	fi
 
